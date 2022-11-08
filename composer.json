@@ -1,10 +1,11 @@
 {
     "name": "kohutd/laravel-relation-traits",
-    "description": ":package_description",
+    "description": "Easily generate model relation traits in Laravel.",
     "keywords": [
         "kohutd",
         "laravel",
-        "laravel-relation-traits"
+        "laravel-relation-traits",
+        "eloquent"
     ],
     "homepage": "https://github.com/kohutd/laravel-relation-traits",
     "license": "MIT",
@@ -59,6 +60,6 @@
             ]
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

@@ -5,7 +5,7 @@ Easily generate model relation traits in Laravel.
 ## Installation
 
 ```shell
-composer install kohutd/laravel-relation-traits
+composer require kohutd/laravel-relation-traits
 ```
 
 ## Usage
