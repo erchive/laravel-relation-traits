@@ -18,7 +18,7 @@ class MakeHasManyTraitCommand extends GeneratorCommand
 
     protected function getNameInput(): string
     {
-        return 'HasMany' . Str::plural($this->getRawNameInput());
+        return 'HasMany'.Str::plural($this->getRawNameInput());
     }
 
     protected function getFunctionName(): string
@@ -28,7 +28,7 @@ class MakeHasManyTraitCommand extends GeneratorCommand
 
     protected function getStub(): string
     {
-        return __DIR__ . '/stubs/HasManyTrait.stub';
+        return __DIR__.'/stubs/HasManyTrait.stub';
     }
 
     protected function buildClass($name): string
@@ -47,17 +47,19 @@ class MakeHasManyTraitCommand extends GeneratorCommand
     protected function replaceFunction(string &$stub, string $name): static
     {
         $stub = str_replace(['{{function}}'], $name, $stub);
+
         return $this;
     }
 
     protected function replaceRelated(string &$stub, string $name): static
     {
-        $stub = str_replace(['{{related}}'], '\App\\Models\\' . $name, $stub);
+        $stub = str_replace(['{{related}}'], '\App\\Models\\'.$name, $stub);
+
         return $this;
     }
 
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return is_dir(app_path('Models')) ? $rootNamespace . '\\Models\\Relations\\' . $this->getRawNameInput() : $rootNamespace;
+        return is_dir(app_path('Models')) ? $rootNamespace.'\\Models\\Relations\\'.$this->getRawNameInput() : $rootNamespace;
     }
 }
