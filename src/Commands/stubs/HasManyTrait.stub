@@ -1,0 +1,16 @@
+<?php
+
+namespace {{ namespace }};
+
+/**
+ * @mixin \Illuminate\Database\Eloquent\Model
+ *
+ * @property \Illuminate\Support\Collection<{{related}}> ${{function}}
+ */
+trait {{ class }}
+{
+    public function {{function}}(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany({{related}}::class);
+    }
+}

@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
+    "name": "kohutd/laravel-relation-traits",
     "description": ":package_description",
     "keywords": [
-        ":vendor_name",
+        "kohutd",
         "laravel",
-        ":package_slug"
+        "laravel-relation-traits"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/kohutd/laravel-relation-traits",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Davud Kohut",
+            "email": "davyd.kohut@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Kohutd\\Laravel\\RelationTraits\\": "src"
         }
     },
     "scripts": {
@@ -61,11 +55,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+                "Kohutd\\Laravel\\RelationTraits\\LaravelRelationTraitsServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
