@@ -18,7 +18,7 @@ class MakeBelongsToTraitCommand extends GeneratorCommand
 
     protected function getNameInput(): string
     {
-        return 'BelongsTo'.$this->getRawNameInput();
+        return 'BelongsTo' . $this->getRawNameInput();
     }
 
     protected function getFunctionName(): string
@@ -28,7 +28,7 @@ class MakeBelongsToTraitCommand extends GeneratorCommand
 
     protected function getStub(): string
     {
-        return __DIR__.'/stubs/BelongsToTrait.stub';
+        return __DIR__ . '/stubs/BelongsToTrait.stub';
     }
 
     protected function buildClass($name): string
@@ -53,13 +53,13 @@ class MakeBelongsToTraitCommand extends GeneratorCommand
 
     protected function replaceRelated(string &$stub, string $name): static
     {
-        $stub = str_replace(['{{related}}'], '\App\\Models\\'.$name, $stub);
+        $stub = str_replace(['{{related}}'], '\App\\Models\\' . $name, $stub);
 
         return $this;
     }
 
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return is_dir(app_path('Models')) ? $rootNamespace.'\\Models\\Relations\\'.$this->getRawNameInput() : $rootNamespace;
+        return is_dir(app_path('Models')) ? $rootNamespace . '\\Models\\Relations\\' . $this->getRawNameInput() : $rootNamespace;
     }
 }

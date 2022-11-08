@@ -2,22 +2,21 @@
 
 namespace Kohutd\Laravel\RelationTraits;
 
+use Illuminate\Support\ServiceProvider;
 use Kohutd\Laravel\RelationTraits\Commands\MakeBelongsToTraitCommand;
 use Kohutd\Laravel\RelationTraits\Commands\MakeHasManyTraitCommand;
 use Kohutd\Laravel\RelationTraits\Commands\MakeHasOneTraitCommand;
 use Kohutd\Laravel\RelationTraits\Commands\MakeRelationTraitsCommand;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelRelationTraitsServiceProvider extends PackageServiceProvider
+class LaravelRelationTraitsServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    public function register()
     {
-        $package
-            ->name('kohutd/laravel-relation-traits')
-            ->hasCommand(MakeBelongsToTraitCommand::class)
-            ->hasCommand(MakeHasManyTraitCommand::class)
-            ->hasCommand(MakeHasOneTraitCommand::class)
-            ->hasCommand(MakeRelationTraitsCommand::class);
+        $this->commands([
+            MakeBelongsToTraitCommand::class,
+            MakeHasManyTraitCommand::class,
+            MakeHasOneTraitCommand::class,
+            MakeRelationTraitsCommand::class,
+        ]);
     }
 }
